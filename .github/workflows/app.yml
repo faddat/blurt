@@ -1,4 +1,4 @@
-name: Gaia Matrix
+name: Blurt Matrix
 on: [push, pull_request]
 
 jobs:
@@ -19,8 +19,10 @@ jobs:
           GOOS: ${{ matrix.targetos }}
           GOARCH: ${{ matrix.arch }}
       - name: Compile
-        run: make build
+        run: | 
+          go mod download
+          go build cmd/blurtd
       - uses: actions/upload-artifact@v2
         with:
           name: blurt ${{ matrix.targetos }} ${{ matrix.arch }}
-          path: build
+          path: blurtd
