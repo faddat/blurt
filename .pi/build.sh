@@ -27,7 +27,7 @@ mkdir .tmp
 # docker buildx build --tag starport --file .pi/Dockerfile --platform linux/arm64 --cache-from starport:cache --cache-to starport:cache --load --progress tty .
 
 # save the image to result-rootfs.tar
-docker save --output ./.tmp/result-rootfs.tar starport
+docker save --output ./.tmp/result-rootfs.tar blurt
 
 # Extract the image using docker-extract
 docker run --rm --tty --volume $(pwd)/./.tmp:/root/./.tmp --workdir /root/./.tmp/.. faddat/toolbox /tools/docker-extract --root ./.tmp/result-rootfs  ./.tmp/result-rootfs.tar
