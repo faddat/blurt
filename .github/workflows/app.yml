@@ -21,8 +21,9 @@ jobs:
       - name: Compile
         run: | 
           go mod download
-          go build cmd/blurtd
+          cd cmd/blurtd
+          go build .
       - uses: actions/upload-artifact@v2
         with:
           name: blurt ${{ matrix.targetos }} ${{ matrix.arch }}
-          path: blurtd
+          path: cmd/blurtd/blurtd
