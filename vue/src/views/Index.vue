@@ -5,6 +5,7 @@
       <sp-bank-balances />
       <sp-token-send />
       <!-- this line is used by starport scaffolding # 4 -->
+		<sp-type-form path="faddat.blurt.blurt" type="post" :fields="[ ['creator', 1, 'string'] , ['title', 2, 'string'] , ['body', 3, 'string'] , ['ipfs', 4, 'string'] , ['parent', 5, 'string'] , ['category', 6, 'string'] ]" />
     </div>
   </div>
 </template>
