@@ -1,0 +1,37 @@
+syntax = "proto3";
+package faddat.blurt.blurt;
+
+option go_package = "github.com/faddat/blurt/x/blurt/types";
+
+import "gogoproto/gogo.proto";
+
+message Post {
+  string creator = 1;
+  string id = 2;
+  string title = 3; 
+  string body = 4; 
+  string ipfs = 5; 
+  string category = 6; 
+}
+
+message MsgCreatePost {
+  string creator = 1;
+  string title = 2; 
+  string body = 3; 
+  string ipfs = 4; 
+  string category = 5; 
+}
+
+message MsgUpdatePost {
+  string creator = 1;
+  string id = 2;
+  string title = 3; 
+  string body = 4; 
+  string ipfs = 5; 
+  string category = 6; 
+}
+
+message MsgDeletePost {
+  string creator = 1;
+  string id = 2;
+}
